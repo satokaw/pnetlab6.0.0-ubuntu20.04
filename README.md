@@ -19,7 +19,7 @@ sudo ip link add name br-pnet-lab-6 type bridge && \
 
 Create TAP network interface
 ```shell
-sudo ip tuntap add tap0 mode tap user root && \
+sudo ip tuntap add tap0 mode tap user "$(whoami)" && \
     sudo ip link set tap0 master br-pnet-lab-6 up && \
     sudo ip link set tap0 up
 ```
