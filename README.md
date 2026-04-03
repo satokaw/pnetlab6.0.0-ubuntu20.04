@@ -62,7 +62,7 @@ Configure Ubuntu
 5. `apt update && apt upgrade -y && apt autoremove --purge -y`
 6. `reboot`
 7. SSH as root with static VM IP and delete installation-created account: `userdel -rf <username>`
-8. Install git `apt install git -y`
+8. Install git and git-lfs `apt install git git-lfs -y`
 
 ## PNET-Lab
 
@@ -82,6 +82,6 @@ Reboot your system again and configure PNET-Lab (autostarted TUI utility after r
 
 Important! Set the same static IP, not autoconfigured
 
-Remove added default gateway from management interface _(192.168.100.0/24)_. Edit `/etc/network/interfaces` (remove `gateway 192.168.100.1`).
+Remove added default gateway from management interface _(192.168.100.0/24)_. Edit `/etc/network/interfaces` (remove `gateway` and dns servers).
 
 Reboot :)
