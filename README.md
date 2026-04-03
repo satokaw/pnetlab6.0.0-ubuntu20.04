@@ -30,9 +30,9 @@ qemu-system-x86_64 -enable-kvm -cpu host -smp 12,sockets=1,cores=12,threads=1 -m
     -drive file=pnet-lab-6.qcow2,if=none,id=drive0,format=qcow2,aio=native,cache=none,discard=on \
     -device virtio-blk-pci,drive=drive0 \
     -netdev tap,id=net-hostonly,ifname=tap0,script=no,downscript=no,vhost=on \
-    -device virtio-net-pci,netdev=net-hostonly,mac=52:69:67:13:37:88 \
+    -device vmxnet3,netdev=net-hostonly,mac=52:69:67:13:37:88 \
     -netdev user,id=net-nat,ipv6=off \
-    -device virtio-net-pci,netdev=net-nat,mac=52:69:67:13:37:89 \
+    -device vmxnet3,netdev=net-nat,mac=52:69:67:13:37:89 \
     -cdrom ubuntu-20.04.6-live-server-amd64.iso -boot d
 ```
 
@@ -48,9 +48,9 @@ qemu-system-x86_64 -enable-kvm -cpu host -smp 12,sockets=1,cores=12,threads=1 -m
     -drive file=pnet-lab-6.qcow2,if=none,id=drive0,format=qcow2,aio=native,cache=none,discard=on \
     -device virtio-blk-pci,drive=drive0 \
     -netdev tap,id=net-hostonly,ifname=tap0,script=no,downscript=no,vhost=on \
-    -device virtio-net-pci,netdev=net-hostonly,mac=52:69:67:13:37:88 \
+    -device vmxnet3,netdev=net-hostonly,mac=52:69:67:13:37:88 \
     -netdev user,id=net-nat,ipv6=off \
-    -device virtio-net-pci,netdev=net-nat,mac=52:69:67:13:37:89 \
+    -device vmxnet3,netdev=net-nat,mac=52:69:67:13:37:89 \
     -nographic -monitor none
 ```
 
